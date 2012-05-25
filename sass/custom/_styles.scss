@@ -1,2 +1,14 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
+
+html {background-color:#fff;background-image:none;}
+#logo-container{margin-bottom:30px;}
+#logo {font-family:'Russo One';font-size:24px;border-bottom:5px solid #c00;width:340px;}
+#logo-sub{font-size:12px;}
+
+body > header {
+    padding-left: 0;
+    padding-right: 0;
+    border-top: 1px solid #dfdedd;
+    margin-top: 10px;
+}
