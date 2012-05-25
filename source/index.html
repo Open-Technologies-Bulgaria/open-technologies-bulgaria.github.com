@@ -1,29 +1,58 @@
----
-layout: default
----
-
-<div class="blog-index">
-  {% assign index = true %}
-  {% for post in paginator.posts %}
-  {% assign content = post.content %}
-    <article>
-      {% include article.html %}
-    </article>
-  {% endfor %}
-  <div class="pagination">
-    {% if paginator.next_page %}
-      <a class="prev" href="{{paginator.next_page}}">&larr; Older</a>
-    {% endif %}
-    <a href="/blog/archives">Blog Archives</a>
-    {% if paginator.previous_page %}
-    <a class="next" href="{{paginator.previous_page}}">Newer &rarr;</a>
-    {% endif %}
-  </div>
+<!DOCTYPE html>
+<html id="html-main">
+<head>
+<title>Open Technologies Bulgaria</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="//ajax.googleapis.com/ajax/libs/dojo/1.7.2/dijit/themes/claro/claro.css" rel="stylesheet" type="text/css" />
+<link href="//ajax.googleapis.com/ajax/libs/dojo/1.7.2/dojox/widget/Dialog/Dialog.css" rel="stylesheet" type="text/css" />
+<link href="//fonts.googleapis.com/css?family=Russo+One" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/front.css" rel="stylesheet" type="text/css">
+<script src="//ajax.googleapis.com/ajax/libs/dojo/1.7.2/dojo/dojo.js" data-dojo-config="'async':true,'parseOnLoad':true" type="text/javascript"></script>
+<script type="text/javascript">require(["dojox/widget/Dialog"]);</script>
+</head>
+<body>
+<div id="main" class="content">
+<div id="logo-container">
+<div id="logo">Open Technologies <em>Bulgaria</em></div>
+<div id="logo-sub"><em>research, test &amp; deploy</em></div>
 </div>
-<aside class="sidebar">
-  {% if site.blog_index_asides.size %}
-    {% include_array blog_index_asides %}
-  {% else %}
-    {% include_array default_asides %}
-  {% endif %}
-</aside>
+
+<div id="qa" class="popup notop" onclick='dijit.byId("dlgQE").show()'><h1 class="bottom">Quality Engineering</h1></div>
+<div id="dlgQE" data-dojo-type="dojox.widget.Dialog" class="claro dialog" dimensions="[810,335]" style="display: none;">
+    Hello World
+</div>
+
+<div id="cloud" class="popup notop fright" onclick='dijit.byId("dlgCloud").show()'><h1 class="bottom">Cloud Computing</h1></div>
+<div id="dlgCloud" data-dojo-type="dojox.widget.Dialog" class="claro dialog" dimensions="[810,335]" style="display: none;">
+    Hello Cloud
+</div>
+
+<div style="clear:both;"></div>
+
+<div id="oss" class="popup" onclick='dijit.byId("dlgOS").show()'><h1 class="bottom">Open Source</h1></div>
+<div id="dlgOS" data-dojo-type="dojox.widget.Dialog" class="claro dialog" dimensions="[810,335]" style="display: none;">
+    Hello Linux
+</div>
+
+<div id="redhat" class="popup fright" onclick='dijit.byId("dlgRedHat").show()'><h1 class="bottom">RedHat Certified</h1></div>
+<div id="dlgRedHat" data-dojo-type="dojox.widget.Dialog" class="claro dialog" dimensions="[810,335]" style="display: none;">
+    Hello Red Hat
+</div>
+
+<div id="dlgSol" data-dojo-type="dojox.widget.Dialog" class="claro dialog" dimensions="[810,335]" style="display: none;">
+    SOLUTIONS
+</div>
+
+<div id="dlgProj" data-dojo-type="dojox.widget.Dialog" class="claro dialog" dimensions="[810,335]" style="display: none;">
+    PROJECTS
+</div>
+</div>
+<div id="footer" class="content">
+<a href="#" onclick='dijit.byId("dlgSol").show()'>solutions</a> |
+<a href="#" onclick='dijit.byId("dlgProj").show()'>projects</a> |
+<a href="http://redhat.force.com/finder/PFPartnerDetail?id=0016000000LxykhAAB">redhat partner</a> |
+<a href="mailto:office[@]otb.bg">contact</a> |
+<a href="/blog/">blog</a>
+</div>
+</body>
+</html>
