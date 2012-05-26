@@ -12,9 +12,9 @@ img {border:none;}
 #footer {background-color:#fbfbfb;border-top:1px solid #dfdfdf;border-bottom:1px solid #dfdfdf;
 color:#333;font-size:10px;padding-bottom:5px;padding-top:5px;font-weight:normal;text-align:center;}
 #qa{background-image:url("/images/qa.jpg"); background-repeat: no-repeat;}
-#cloud{background-image:url("/images/cloud.png"); background-repeat: no-repeat;}
-#oss{background-image:url("/images/oss.jpg"); background-repeat: no-repeat;}
-#redhat{background-image:url("/images/redhat.png"); background-repeat: no-repeat;}
+#cloud{background-image:url("/images/cloud.jpg"); background-repeat: no-repeat;}
+#oss{background-image:url("/images/oss.png"); background-repeat: no-repeat;}
+#certified{background-image:url("/images/rhcert.png"); background-repeat: no-repeat;}
 .content {width:650px;margin-top:10px;margin-left:auto;margin-right:auto;}
 .dialog {text-align: left; background-color:#fff;padding:20px;}
 .popup {width:300px;height:300px;background-color:#fbfbfb;border:1px solid #dfdfdf;margin-top:50px;float:left;}
