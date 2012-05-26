@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://Open-Technologies-Bulgaria.github.com/atom.xml" rel="self"/>
-  <link href="http://Open-Technologies-Bulgaria.github.com/"/>
-  <updated>2012-05-25T14:13:06+03:00</updated>
-  <id>http://Open-Technologies-Bulgaria.github.com/</id>
+  <title><![CDATA[Open Technologies Bulgaria]]></title>
+  <link href="http://otb.bg/atom.xml" rel="self"/>
+  <link href="http://otb.bg/"/>
+  <updated>2012-05-26T23:10:08+03:00</updated>
+  <id>http://otb.bg/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Open Technologies Bulgaria]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
