@@ -61,7 +61,7 @@ You need to define the protected repository in a .repo file. It needs to look so
 # cat /etc/yum.repos.d/protected.repo
 [protected]
 name=SSL protected repository
-baseurl=<strong>https</strong>://repos.example.com/protected
+baseurl=https://repos.example.com/protected
 enabled=1
 gpgcheck=1
 gpgkey=https://repos.example.com/RPM-GPG-KEY
@@ -112,7 +112,7 @@ For more information on this configuration please see
 The simplest form of <em>rpm.cgi</em> script may look like this:
 ```
 #!/bin/bash
-&nbsp;
+
 if [ "$SSL_CLIENT_M_SERIAL" == "9F938211B53B4F44" ]; then
     echo "Content-type: application/x-rpm"
     echo "Content-length: $(stat --printf='%s' $PATH_TRANSLATED)"
