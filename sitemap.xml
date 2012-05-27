@@ -23,15 +23,25 @@
         <lastmod>2012-05-27T20:26:00+03:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://otb.bg/blog/2011/08/22/opencode-systems-improves-software-testing-with-open-source-tools/
+        </loc>
+        <lastmod>2012-05-27T22:34:28+03:00</lastmod>
+    </url>
+    <url>
         <loc>http://otb.bg/blog/2011/09/15/protected-rpm-repositories-with-yum-and-ssl/</loc>
         <lastmod>2012-05-27T20:26:46+03:00</lastmod>
     </url>
     <url>
+        <loc>http://otb.bg/blog/2012/01/04/bebekarta-runs-on-drupal/</loc>
+        <lastmod>2012-05-27T22:34:48+03:00</lastmod>
+    </url>
+    <url>
         <loc>http://otb.bg/blog/archives/</loc>
-        <lastmod>2012-05-27T20:26:46+03:00</lastmod>
+        <lastmod>2012-05-27T22:34:48+03:00</lastmod>
     </url>
     <url>
         <loc>http://otb.bg/blog/</loc>
-        <lastmod>2012-05-27T20:26:46+03:00</lastmod>
+        <lastmod>2012-05-27T22:34:48+03:00</lastmod>
     </url>
 </urlset>

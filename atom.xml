@@ -4,7 +4,7 @@
   <title><![CDATA[Open Technologies Bulgaria]]></title>
   <link href="http://otb.bg/atom.xml" rel="self"/>
   <link href="http://otb.bg/"/>
-  <updated>2012-05-27T20:27:36+03:00</updated>
+  <updated>2012-05-27T22:39:27+03:00</updated>
   <id>http://otb.bg/</id>
   <author>
     <name><![CDATA[Open Technologies Bulgaria]]></name>
@@ -12,6 +12,56 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[BebeKarta runs on Drupal]]></title>
+    <link href="http://otb.bg/blog/2012/01/04/bebekarta-runs-on-drupal/"/>
+    <updated>2012-01-04T22:21:00+02:00</updated>
+    <id>http://otb.bg/blog/2012/01/04/bebekarta-runs-on-drupal</id>
+    <content type="html"><![CDATA[<p><img src="http://otb.bg/images/bebekarta.png" alt="logo of "style="float: right;" /></p>
+
+<p><strong>Customer:</strong> <a href="http://bebekarta.com/">BebeKarta</a></p>
+
+<p><strong>Industry:</strong> Internet/Community website</p>
+
+<p><strong>Geography:</strong> Bulgaria</p>
+
+<p><strong>Business challenge:</strong> Create website for small advertisements with free/paid options</p>
+
+<p><strong>Solution:</strong> Drupal based website, custom programming and configuration</p>
+
+<p><strong>Software:</strong> <a href="http://drupal.org">Drupal</a></p>
+
+<p><strong>Hardware:</strong> N/A</p>
+
+<p><strong>Migration:</strong> no</p>
+
+<p><strong>Advantages:</strong> Flexible website</p>
+
+<h2>BACKGROUND</h2>
+
+<p>BebeKarta is a website for mothers to exchange or re-sell used and new kid items. It can also be
+used from merchants to promote new articles to their target audience.</p>
+
+<h2>BUSINESS CHALLENGE</h2>
+
+<p>To create easy to use and maintain website with free/paid subscriptions and integration into SMS
+payment gateway.</p>
+
+<h2>SOLUTION</h2>
+
+<p>Open Technologies Bulgaria was selected to develop a Drupal based website which integrates a good
+amount of standard Drupal modules. During the development process we had to adjust some modules to
+avoid bugs or unwanted functionality. We developed additional modules to integrate with SMS payment
+gateway <a href="http://mobio.bg">Mobio</a> and allow for content expiration based on subscriptions.</p>
+
+<p>Graphic design is made by <a href="http://www.novsait.eu">Georgi Atanasov</a>.</p>
+
+<h2>BENEFITS</h2>
+
+<p>Flexible website which is easy to use and doesn&#8217;t require technical expertise to maintain.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Protected RPM repositories with yum and SSL]]></title>
@@ -200,6 +250,70 @@ The above set-up is very basic and only demonstrates the technology behind this.
 <p>All communications are entirely over HTTPS.</p>
 
 <p>Our custom solution has the advantage that it is simple and easy to maintain as well as easy to use. It integrates well with other plugins (e.g. yum-presto for delta rpm support and yum-rhnplugin) and can be used via yum or PackageKit which are the standard package management tools on Red Hat Enterprise Linux 6.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Opencode Systems improves software testing with open source tools]]></title>
+    <link href="http://otb.bg/blog/2011/08/22/opencode-systems-improves-software-testing-with-open-source-tools/"/>
+    <updated>2011-08-22T21:50:00+03:00</updated>
+    <id>http://otb.bg/blog/2011/08/22/opencode-systems-improves-software-testing-with-open-source-tools</id>
+    <content type="html"><![CDATA[<p><img src="http://otb.bg/images/opencode.jpg" alt="logo of "style="float: right;" /></p>
+
+<p><strong>Customer:</strong> <a href="http://www.opencode.com/">Opencode Systems</a></p>
+
+<p><strong>Industry:</strong> Telecommunications</p>
+
+<p><strong>Geography:</strong> Bulgaria/International</p>
+
+<p><strong>Business challenge:</strong> Improve existing QA infrastructure and processes</p>
+
+<p><strong>Solution:</strong> Deploy QA lab and test automation framework, consulting, training</p>
+
+<p><strong>Software:</strong> <a href="https://fedorahosted.org/beaker/">Beaker</a> automated testing framework</p>
+
+<p><strong>Hardware:</strong> HP blade servers</p>
+
+<p><strong>Migration:</strong> no</p>
+
+<p><strong>Advantages:</strong> Faster QA turnaround, better test coverage</p>
+
+<h2>BACKGROUND</h2>
+
+<p>Opencode Systems is a telecommunications solution provider, dedicated to open systems for the mobile network.
+Opencode makes network technology that is invisible to consumers but underlies many of the mobile services they use.</p>
+
+<p>Opencode is the industry’s number one provider of USSD Center and CAMEL Gateway which have become the operators’ choice for open network platforms.</p>
+
+<p>Opencode SS7/SIGTRAN network centered solutions have been deployed by Tier 1 mobile operators worldwide.</p>
+
+<h2>BUSINESS CHALLENGE</h2>
+
+<p>Opencode Systems&#39; solutions integrate specific hardware and software which runs on Red Hat Enterprise Linux.
+The company wanted to improve its QA operations and deploy new test lab, complete with systems provisioning
+and test automation which is native to Linux. Opencode also wanted to re-organize their development process
+and follow more closely software packaging best practices for Red Hat Enterprise Linux.</p>
+
+<h2>SOLUTION</h2>
+
+<p>Open Technologies Bulgaria was hired to evaluate the existing infrastructure and work-flows and provide
+recommendations for improvements as well as implement the selected solution. After meeting with Opencode&#39;s
+key QA and development engineers we created a report to present to higher management.</p>
+
+<p><em>Beaker</em> test automation framework was selected because it matched all existing and future requirements of the
+company and integrates very well with Red Hat Enterprise Linux. Beaker was deployed onto completely new
+hardware inside the company&#39;s data canter and employees were trained how to use it, write automated test scripts
+and how to schedule test jobs.</p>
+
+<p>In addition Open Technologies Bulgaria helped with recommendations for hiring new QA staff.</p>
+
+<h2>BENEFITS</h2>
+
+<p>The new test lab allows the company to increase test coverage and provide better software to their customers.
+Automation shortens test turnaround time and allows more flexibility on how and when testing is performed.</p>
+
+<p>Improvement recommendations revealed work-flows which were not functioning smoothly. Implementing them in the long term
+will provide additional benefits to Opencode.</p>
 ]]></content>
   </entry>
   

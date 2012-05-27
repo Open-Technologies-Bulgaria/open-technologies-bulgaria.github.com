@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Drupal | Open Technologies Bulgaria]]></title>
   <link href="http://otb.bg/blog/categories/drupal/atom.xml" rel="self"/>
   <link href="http://otb.bg/"/>
-  <updated>2012-05-27T20:27:36+03:00</updated>
+  <updated>2012-05-27T22:39:27+03:00</updated>
   <id>http://otb.bg/</id>
   <author>
     <name><![CDATA[Open Technologies Bulgaria]]></name>
@@ -12,6 +12,56 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[BebeKarta runs on Drupal]]></title>
+    <link href="http://otb.bg/blog/2012/01/04/bebekarta-runs-on-drupal/"/>
+    <updated>2012-01-04T22:21:00+02:00</updated>
+    <id>http://otb.bg/blog/2012/01/04/bebekarta-runs-on-drupal</id>
+    <content type="html"><![CDATA[<p><img src="http://otb.bg/images/bebekarta.png" alt="logo of "style="float: right;" /></p>
+
+<p><strong>Customer:</strong> <a href="http://bebekarta.com/">BebeKarta</a></p>
+
+<p><strong>Industry:</strong> Internet/Community website</p>
+
+<p><strong>Geography:</strong> Bulgaria</p>
+
+<p><strong>Business challenge:</strong> Create website for small advertisements with free/paid options</p>
+
+<p><strong>Solution:</strong> Drupal based website, custom programming and configuration</p>
+
+<p><strong>Software:</strong> <a href="http://drupal.org">Drupal</a></p>
+
+<p><strong>Hardware:</strong> N/A</p>
+
+<p><strong>Migration:</strong> no</p>
+
+<p><strong>Advantages:</strong> Flexible website</p>
+
+<h2>BACKGROUND</h2>
+
+<p>BebeKarta is a website for mothers to exchange or re-sell used and new kid items. It can also be
+used from merchants to promote new articles to their target audience.</p>
+
+<h2>BUSINESS CHALLENGE</h2>
+
+<p>To create easy to use and maintain website with free/paid subscriptions and integration into SMS
+payment gateway.</p>
+
+<h2>SOLUTION</h2>
+
+<p>Open Technologies Bulgaria was selected to develop a Drupal based website which integrates a good
+amount of standard Drupal modules. During the development process we had to adjust some modules to
+avoid bugs or unwanted functionality. We developed additional modules to integrate with SMS payment
+gateway <a href="http://mobio.bg">Mobio</a> and allow for content expiration based on subscriptions.</p>
+
+<p>Graphic design is made by <a href="http://www.novsait.eu">Georgi Atanasov</a>.</p>
+
+<h2>BENEFITS</h2>
+
+<p>Flexible website which is easy to use and doesn't require technical expertise to maintain.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Eagle Auto Transport launched its website on Drupal]]></title>
