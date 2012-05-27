@@ -51,7 +51,7 @@ Entire classroom with 15 seats was equipped with a single powerful server. As a 
 electricity costs and freed up more space on each table.
 
 Together we built a low voltage USB network, removing the old high-voltage AC cables which were unsafe.
-The room bacame safer and more spacious.
+The room became safer and more spacious.
 
 The absence of additional computers shortens the time needed to update software, install new programs and configure settings
 while leaving more time for system administrators to work on other projects in the school.

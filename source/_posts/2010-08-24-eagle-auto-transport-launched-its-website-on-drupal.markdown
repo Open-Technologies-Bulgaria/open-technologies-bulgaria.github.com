@@ -42,7 +42,7 @@ SOLUTION
 
 Open Technologies Bulgaria built the website <http://movecareasy.com> using Drupal.
 In addition, we made a custom site theme, module to automatically display images according to predefined settings,
-and module for generating inqueries about transportation price.
+and module for generating inquiries about transportation price.
 
 Graphic design and logo are made by <a href="http://www.novsait.eu">Georgi Atanasov</a>.
 
