@@ -1,11 +1,29 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>
+            http://otb.bg/blog/2010/08/22/eagle-auto-transport-launched-its-website-on-drupal/
+        </loc>
+        <lastmod>2012-05-27T19:11:29+03:00</lastmod>
+    </url>
+    <url>
+        <loc>http://otb.bg/blog/2010/12/22/vidiko-runs-on-red-hat-enterprise-linux/</loc>
+        <lastmod>2012-05-27T19:10:41+03:00</lastmod>
+    </url>
+    <url>
+        <loc>http://otb.bg/blog/2011/01/20/dch-becomes-red-hat-isv-partner/</loc>
+        <lastmod>2012-05-27T19:25:07+03:00</lastmod>
+    </url>
+    <url>
+        <loc>http://otb.bg/blog/2011/02/28/elsys-uses-sumu-for-its-new-computer-room/</loc>
+        <lastmod>2012-05-27T18:45:34+03:00</lastmod>
+    </url>
+    <url>
         <loc>http://otb.bg/blog/archives/</loc>
-        <lastmod>2012-05-26T00:59:00+03:00</lastmod>
+        <lastmod>2012-05-27T19:25:07+03:00</lastmod>
     </url>
     <url>
         <loc>http://otb.bg/blog/</loc>
-        <lastmod>2012-05-26T00:59:00+03:00</lastmod>
+        <lastmod>2012-05-27T19:25:07+03:00</lastmod>
     </url>
 </urlset>

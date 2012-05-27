@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: SUMU | Open Technologies Bulgaria]]></title>
+  <link href="http://otb.bg/blog/categories/sumu/atom.xml" rel="self"/>
+  <link href="http://otb.bg/"/>
+  <updated>2012-05-27T19:27:32+03:00</updated>
+  <id>http://otb.bg/</id>
+  <author>
+    <name><![CDATA[Open Technologies Bulgaria]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[ElSys uses SUMU for its new computer room]]></title>
+    <link href="http://otb.bg/blog/2011/02/28/elsys-uses-sumu-for-its-new-computer-room/"/>
+    <updated>2011-02-28T12:00:00+02:00</updated>
+    <id>http://otb.bg/blog/2011/02/28/elsys-uses-sumu-for-its-new-computer-room</id>
+    <content type="html"><![CDATA[<p><img src="http://otb.bg/images/logo_TUES.png" alt="logo of TUES" style="float: right;" /></p>
+
+<p><strong>Customer: </strong> <a href="http://elsys-bg.org">Technological School "Electronic Systems"</a></p>
+
+<p><strong>Industry: </strong> Education</p>
+
+<p><strong>Geography: </strong> Sofia, Bulgaria</p>
+
+<p><strong>Business challenge:</strong> cheap and efficient equipment of new computer room</p>
+
+<p><strong>Solution: </strong> Deployment of multi-seat environment</p>
+
+<p><strong>Software: </strong> Red Hat Enterprise Linux 6 Workstation, multi-seat add-ons</p>
+
+<p><strong>Hardware: </strong> <a href="http://ts.fujitsu.com/products/standard_servers/tower/primergy_tx100s1.html">Fujitsu TX100 S1</a> server,
+<a href="http://plugable.com/products/UGA-125/">Plugable UGA-125</a> USB video, USB peripherals</p>
+
+<p><strong>Migration: </strong> none</p>
+
+<p><strong>Advantages: </strong> low cost, low maintenance</p>
+
+<h2>BACKGROUND</h2>
+
+<p>Technological School "Electronic Systems" at the Technical University - Sofia is unique in Bulgaria.
+ElSys offers the best education in information technology. The school has modern computer laboratories and excellent teachers.
+The school prepares specialists in the professional fields of "Automation and Electronics",
+"Programming" and "Computer Networks". The school has a local Cisco Academy.</p>
+
+<h2>BUSINESS CHALLENGE</h2>
+
+<p>The main challenge for ElSys was furnishing a new computer lab at minimal cost using existing peripheral hardware.
+The second challenge was to use a platform that is familiar to students and which requires minimal maintenance.</p>
+
+<h2>SOLUTION</h2>
+
+<p>Multi-seat environment SUMU was preferred because of its innovative technology, ease of use and low cost of electricity.</p>
+
+<h2>BENEFITS</h2>
+
+<p>Entire classroom with 15 seats was equipped with a single powerful server. As a result dramatically reduced noise pollution and heat,
+electricity costs and freed up more space on each table.</p>
+
+<p>Together we built a low voltage USB network, removing the old high-voltage AC cables which were unsafe.
+The room bacame safer and more spacious.</p>
+
+<p>The absence of additional computers shortens the time needed to update software, install new programs and configure settings
+while leaving more time for system administrators to work on other projects in the school.</p>
+
+<p>Red Hat Enterprise Linux 6 includes a variety of environments and programming languages which are used in specialized classes.
+Students in the school have experience with Linux and working with the new system was not a problem for them.</p>
+
+<p>Photos of the testing process and use of the new class room can be found at
+<a href="http://www.facebook.com/media/set/?set=a.203913389618853.54571.180150925328433">http://www.facebook.com/media/set/?set=a.203913389618853.54571.180150925328433</a>
+Video can be seen at <a href="http://www.youtube.com/watch?v=7GYbCDGTz-4">http://www.youtube.com/watch?v=7GYbCDGTz-4</a></p>
+]]></content>
+  </entry>
+  
+</feed>

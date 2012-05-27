@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Drupal | Open Technologies Bulgaria]]></title>
+  <link href="http://otb.bg/blog/categories/drupal/atom.xml" rel="self"/>
+  <link href="http://otb.bg/"/>
+  <updated>2012-05-27T19:27:32+03:00</updated>
+  <id>http://otb.bg/</id>
+  <author>
+    <name><![CDATA[Open Technologies Bulgaria]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Eagle Auto Transport launched its website on Drupal]]></title>
+    <link href="http://otb.bg/blog/2010/08/22/eagle-auto-transport-launched-its-website-on-drupal/"/>
+    <updated>2010-08-22T18:47:00+03:00</updated>
+    <id>http://otb.bg/blog/2010/08/22/eagle-auto-transport-launched-its-website-on-drupal</id>
+    <content type="html"><![CDATA[<p><img src="http://otb.bg/images/eagle_auto_transport_logo.png" alt="logo of Eagle Auto Transport" style="float: right;" /></p>
+
+<p><strong>Customer:</strong> <a href="http://movecareasy.com">Eagle Auto Transport</a></p>
+
+<p><strong>Industry:</strong> Transportation</p>
+
+<p><strong>Geography:</strong> United States</p>
+
+<p><strong>Business challenge:</strong> Create a website with customized functionality</p>
+
+<p><strong>Solution:</strong> Website built using Drupal and additional programming</p>
+
+<p><strong>Software:</strong> <a href="http://drupal.org">Drupal</a>, custom modules and themes</p>
+
+<p><strong>Hardware:</strong> no</p>
+
+<p><strong>Migration:</strong> no</p>
+
+<p><strong>Advantages:</strong> modern website with a form for inquiries</p>
+
+<h2>BACKGROUND</h2>
+
+<p>Eagle Auto Transport is a company offering vehicles transport - cars, vans, motorcycles and more.
+The company specializes in door to door shipments.</p>
+
+<h2>BUSINESS CHALLENGE</h2>
+
+<p>The key business challenge for the company is building a modern web site, defining its graphic vision and the ability to process
+business tailored inquiries from site visitors.</p>
+
+<h2>SOLUTION</h2>
+
+<p>Open Technologies Bulgaria built the website <a href="http://movecareasy.com">http://movecareasy.com</a> using Drupal.
+In addition, we made a custom site theme, module to automatically display images according to predefined settings,
+and module for generating inqueries about transportation price.</p>
+
+<p>Graphic design and logo are made by <a href="http://www.novsait.eu">Georgi Atanasov</a>.</p>
+
+<h2>BENEFITS</h2>
+
+<p>With its web site Eagle Auto Transport launched their online presence hoping to get access to more potential customers.
+Specialized form to generate price inquiries allows the company to reduce the time spent talking on the phone and send a reply via email.</p>
+]]></content>
+  </entry>
+  
+</feed>
