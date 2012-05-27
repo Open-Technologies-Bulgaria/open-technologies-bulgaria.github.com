@@ -4,7 +4,7 @@
   <title><![CDATA[Category: customers | Open Technologies Bulgaria]]></title>
   <link href="http://otb.bg/blog/categories/customers/atom.xml" rel="self"/>
   <link href="http://otb.bg/"/>
-  <updated>2012-05-27T22:39:27+03:00</updated>
+  <updated>2012-05-27T23:10:50+03:00</updated>
   <id>http://otb.bg/</id>
   <author>
     <name><![CDATA[Open Technologies Bulgaria]]></name>
@@ -12,6 +12,57 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[fosscourse migrates to GitHub]]></title>
+    <link href="http://otb.bg/blog/2012/05/27/fosscourse-migrates-to-github/"/>
+    <updated>2012-05-27T22:51:00+03:00</updated>
+    <id>http://otb.bg/blog/2012/05/27/fosscourse-migrates-to-github</id>
+    <content type="html"><![CDATA[<p><strong>Customer:</strong> <a href="https://github.com/fosscourse">fosscourse</a></p>
+
+<p><strong>Industry:</strong> Open source education</p>
+
+<p><strong>Geography:</strong> Bulgaria</p>
+
+<p><strong>Business challenge:</strong> Archive website content on a public mirror</p>
+
+<p><strong>Solution:</strong> Import all content into GitHub wiki</p>
+
+<p><strong>Software:</strong> N/A</p>
+
+<p><strong>Hardware:</strong> N/A</p>
+
+<p><strong>Migration:</strong> <a href="http://mediawiki.org">MediaWiki</a> to <a href="http://github.com">GitHub</a></p>
+
+<p><strong>Advantages:</strong> Public archive at no cost</p>
+
+<h2>BACKGROUND</h2>
+
+<p>fosscourse is an independent project which seeks to introduce formal open source training
+into universities. It was founded and supported by <a href="http://github.com/bbatsov">Bozhidar Batsov</a>,
+<a href="http://github.com/kamburov">Kiril Kamburov</a> and <a href="http://github.com/atodorov">Alexander Todorov</a>.</p>
+
+<p>The team delivered several semesters of trainings at the Technical University - Sofia during 2008-2009
+and some sporadic events at Sofia University in 2010. Since then the project has been discontinued
+and its domain and web hosting have expired.</p>
+
+<h2>BUSINESS CHALLENGE</h2>
+
+<p>To migrate existing content to a public archive which is free of charge and doesn't require any maintenance.</p>
+
+<h2>SOLUTION</h2>
+
+<p>Open Technologies Bulgaria has been a backup of the project during all its years, providing technical
+support and hosting when necessary. We've migrated all pages from the legacy MediaWiki into
+a GitHub wiki. The migration was straight-forward with some minor issues. Unfortunately some of the original
+MediaWiki pages were damaged repair and could not be migrated. We've kept a copy of the database should someone
+decide to pickup and revive the project.</p>
+
+<h2>BENEFITS</h2>
+
+<p>Seamless migration from a legacy platform and public mirror of once active and vibrant project.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[BebeKarta runs on Drupal]]></title>
@@ -249,56 +300,6 @@ and deal with compatibility problems. This avoids the waste of staff and excess 
 
 <p>DCH extended its market visibility, because many of the financial institutions use Red Hat Enterprise Linux.
 This way, DCH offers a solution that is ready for use.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Vidiko runs on Red Hat Enterprise Linux]]></title>
-    <link href="http://otb.bg/blog/2010/12/22/vidiko-runs-on-red-hat-enterprise-linux/"/>
-    <updated>2010-12-22T19:01:00+02:00</updated>
-    <id>http://otb.bg/blog/2010/12/22/vidiko-runs-on-red-hat-enterprise-linux</id>
-    <content type="html"><![CDATA[<p><strong>Customer:</strong> Vidiko Ltd.</p>
-
-<p><strong>Industry:</strong> Accounting Services</p>
-
-<p><strong>Geography:</strong> Bulgaria</p>
-
-<p><strong>Business challenge:</strong> Reliable solution for file storage</p>
-
-<p><strong>Solution:</strong> Build internal corporate file server</p>
-
-<p><strong>Software:</strong> Red Hat Enterprise Linux 6 Server</p>
-
-<p><strong>Hardware:</strong> <a href="http://ts.fujitsu.com/products/standard_servers/tower/primergy_tx100s2.html">Fujitsu TX100 S2</a> server,
-emergency power backup <a href = "http://powerwalker.eu/line-interactive.asp">PowerWalker VI 2000 LCD</a></p>
-
-<p><strong>Migration:</strong> no</p>
-
-<p><strong>Advantages:</strong> reliable configuration with minimal maintenance</p>
-
-<h2>BACKGROUND</h2>
-
-<p>Vidiko Ltd. offers accounting services.</p>
-
-<h2>BUSINESS CHALLENGE</h2>
-
-<p>The key business challenge for the company was to provide a reliable file server for internal use.
-Access to files should be possible from Windows desktop stations that used to work with specialized software.</p>
-
-<h2>SOLUTION</h2>
-
-<p>Open Technologies Bulgaria has built a file server using four disk RAID10 array combined with LVM.
-The machine is installed with Red Hat Enterprise Linux 6 Server, and access from Windows stations is through Samba.
-Additional UPS provides power failure protection.</p>
-
-<h2>BENEFITS</h2>
-
-<p>RAID10 configuration protects against disk failure and loss of information while improving productivity.
-Combined with the standard Linux LVM (logical volume manager), the server capacity can be expanded in the future by adding additional hard drives.</p>
-
-<p>UPS provides protection from power blackouts and voltage differences.
-The server is configured to automatically switch on and off in the presence of power or low battery.
-This eliminated the need for constant monitoring by company staff.</p>
 ]]></content>
   </entry>
   
