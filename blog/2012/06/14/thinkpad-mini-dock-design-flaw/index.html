@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Vidiko runs on Red Hat Enterprise Linux - Open Technologies Bulgaria</title>
+  <title>ThinkPad Mini Dock design flaw - Open Technologies Bulgaria</title>
   <meta name="author" content="Open Technologies Bulgaria">
 
   
-  <meta name="description" content="Customer: Vidiko Ltd. Industry: Accounting Services Geography: Bulgaria Business challenge: Reliable solution for file storage Solution: Build &hellip;">
+  <meta name="description" content="I&#8217;ve got my hands onto a ThinkPad Mini Dock Series 3 docking station which is
+compatible with my newest laptop. Being a QA engineer for so long &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://otb.bg/blog/2010/12/22/vidiko-runs-on-red-hat-enterprise-linux">
+  <link rel="canonical" href="http://otb.bg/blog/2012/06/14/thinkpad-mini-dock-design-flaw">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -79,7 +80,7 @@
   
   <header>
     
-      <h1 class="entry-title">Vidiko runs on Red Hat Enterprise Linux</h1>
+      <h1 class="entry-title">ThinkPad Mini Dock design flaw</h1>
     
     
       <p class="meta">
@@ -95,55 +96,44 @@
   
 
 
-<time datetime="2010-12-22T19:01:00+02:00" pubdate data-updated="true">Dec 22<span>nd</span>, 2010</time>
+<time datetime="2012-06-14T21:55:00+03:00" pubdate data-updated="true">Jun 14<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p><strong>Customer:</strong> Vidiko Ltd.</p>
+<div class="entry-content"><p>I&#8217;ve got my hands onto a <code>ThinkPad Mini Dock Series 3</code> docking station which is
+compatible with my newest laptop. Being a QA engineer for so long I immediately
+noticed something that wasn&#8217;t quite right. The buttons on the left and the mechanism
+next to them are blocking the hot air exhaust from the CPU fan. This model of docking
+station is made to fit several models of laptops and those which dock in position 2 are
+less affected from those which dock in possition 1. Mine was not a lucky one.</p>
 
-<p><strong>Industry:</strong> Accounting Services</p>
+<p><img src="/images/dock/alone.jpg" title="docking station in position 2" alt="docking station in position 2" /></p>
 
-<p><strong>Geography:</strong> Bulgaria</p>
+<p>On the pictures below it is clearly visible that most of the hot air coming out of the CPU
+fan is blocked.</p>
 
-<p><strong>Business challenge:</strong> Reliable solution for file storage</p>
+<p><img src="/images/dock/top.jpg" title="top view" alt="top view" />
+<img src="/images/dock/back.jpg" title="back view" alt="back view" />
+<img src="/images/dock/side.jpg" title="side view" alt="side view" /></p>
 
-<p><strong>Solution:</strong> Build internal corporate file server</p>
+<p>In order to reduce laptop heating and provide better cooling I decided to remove the
+1/2 position switch mechanism. To do that you have to unscrew all screws from the docking
+station and carefully split the top and bottom halves. The offending piece of plastic is
+screwed with two tiny screws at the bottom. Once they are removed everything comes off.</p>
 
-<p><strong>Software:</strong> Red Hat Enterprise Linux 6 Server</p>
+<p><img src="/images/dock/removed.jpg" title="blocking part removed" alt="blocking part removed" /></p>
 
-<p><strong>Hardware:</strong> <a href="http://ts.fujitsu.com/products/standard_servers/tower/primergy_tx100s2.html">Fujitsu TX100 S2</a> server,
-emergency power backup <a href = "http://powerwalker.eu/line-interactive.asp">PowerWalker VI 2000 LCD</a></p>
+<p>Because QA is not only about finding bugs but making sure people are aware of them so bugs
+get fixed I&#8217;ve sent an email to <code>Lenovo</code>. I&#8217;d be glad if they take this into account and
+do a better test job for their next models. I don&#8217;t want to switch to another laptop brand :(.</p>
 
-<p><strong>Migration:</strong> no</p>
+<hr />
 
-<p><strong>Advantages:</strong> reliable configuration with minimal maintenance</p>
-
-<h2>BACKGROUND</h2>
-
-<p>Vidiko Ltd. offers accounting services.</p>
-
-<h2>BUSINESS CHALLENGE</h2>
-
-<p>The key business challenge for the company was to provide a reliable file server for internal use.
-Access to files should be possible from Windows desktop stations that used to work with specialized software.</p>
-
-<h2>SOLUTION</h2>
-
-<p>Open Technologies Bulgaria has built a file server using four disk RAID10 array combined with LVM.
-The machine is installed with Red Hat Enterprise Linux 6 Server, and access from Windows stations is through Samba.
-Additional UPS provides power failure protection.</p>
-
-<h2>BENEFITS</h2>
-
-<p>RAID10 configuration protects against disk failure and loss of information while improving productivity.
-Combined with the standard Linux LVM (logical volume manager), the server capacity can be expanded in the future by adding additional hard drives.</p>
-
-<p>UPS provides protection from power blackouts and voltage differences.
-The server is configured to automatically switch on and off in the presence of power or low battery.
-This eliminated the need for constant monitoring by company staff.</p>
+<p><a href="http://about.me/atodorov">Alexander Todorov</a> is a QA engineer with 5+ years of experience and
+founder of <code>Open Technologies Bulgaria, Ltd</code>.</p>
 </div>
 
 
@@ -152,7 +142,7 @@ This eliminated the need for constant monitoring by company staff.</p>
       
   
 
-<span class="byline author vcard">Posted by <span class="fn">Open Technologies Bulgaria</span></span>
+<span class="byline author vcard">Posted by <span class="fn">Alexander Todorov</span></span>
 
       
 
@@ -166,12 +156,12 @@ This eliminated the need for constant monitoring by company staff.</p>
   
 
 
-<time datetime="2010-12-22T19:01:00+02:00" pubdate data-updated="true">Dec 22<span>nd</span>, 2010</time>
+<time datetime="2012-06-14T21:55:00+03:00" pubdate data-updated="true">Jun 14<span>th</span>, 2012</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/red-hat-enterprise-linux/'>Red Hat Enterprise Linux</a>, <a class='category' href='/blog/categories/customers/'>customers</a>
+    <a class='category' href='/blog/categories/lenovo/'>Lenovo</a>, <a class='category' href='/blog/categories/qa/'>QA</a>, <a class='category' href='/blog/categories/thinkpad/'>ThinkPad</a>, <a class='category' href='/blog/categories/hardware/'>hardware</a>
   
 </span>
 
@@ -180,7 +170,7 @@ This eliminated the need for constant monitoring by company staff.</p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://otb.bg/blog/2010/12/22/vidiko-runs-on-red-hat-enterprise-linux/" data-via="" data-counturl="http://otb.bg/blog/2010/12/22/vidiko-runs-on-red-hat-enterprise-linux/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://otb.bg/blog/2012/06/14/thinkpad-mini-dock-design-flaw/" data-via="" data-counturl="http://otb.bg/blog/2012/06/14/thinkpad-mini-dock-design-flaw/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -193,14 +183,18 @@ This eliminated the need for constant monitoring by company staff.</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2010/08/22/eagle-auto-transport-launched-its-website-on-drupal/" title="Previous Post: Eagle Auto Transport launched its website on Drupal">&laquo; Eagle Auto Transport launched its website on Drupal</a>
+        <a class="basic-alignment left" href="/blog/2012/05/27/fosscourse-migrates-to-github/" title="Previous Post: fosscourse migrates to GitHub">&laquo; fosscourse migrates to GitHub</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2011/01/20/dch-becomes-red-hat-isv-partner/" title="Next Post: DCH becomes Red Hat ISV partner">DCH becomes Red Hat ISV partner &raquo;</a>
       
     </p>
   </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -251,6 +245,22 @@ This eliminated the need for constant monitoring by company staff.</p>
 
 </footer>
   
+
+<script type="text/javascript">
+      var disqus_shortname = 'otb-blog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://otb.bg/blog/2012/06/14/thinkpad-mini-dock-design-flaw/';
+        var disqus_url = 'http://otb.bg/blog/2012/06/14/thinkpad-mini-dock-design-flaw/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
