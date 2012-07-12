@@ -9,8 +9,8 @@
   <meta name="author" content="Open Technologies Bulgaria">
 
   
-  <meta name="description" content="I&#8217;ve got my hands onto a ThinkPad Mini Dock Series 3 docking station which is
-compatible with my newest laptop. Being a QA engineer for so long &hellip;">
+  <meta name="description" content="VERSION Red Hat Enterprise Linux 6 PROBLEM You have to create a single PDF file by combining multiple files -
+for example individually scanned pages &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +77,69 @@ compatible with my newest laptop. Being a QA engineer for so long &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/07/12/combining-pdf-files-on-the-command-line/">Combining PDF files on the command line</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-12T11:06:00+03:00" pubdate data-updated="true">Jul 12<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong>VERSION</strong></p>
+
+<p>Red Hat Enterprise Linux 6</p>
+
+<p><strong>PROBLEM</strong></p>
+
+<p>You have to create a single PDF file by combining multiple files -
+for example individually scanned pages.</p>
+
+<p><strong>ASSUMPTIONS</strong></p>
+
+<p>You know how to start a shell and havigate to the directory containing the files.</p>
+
+<p><strong>SOLUTION</strong></p>
+
+<p>If individual PDF files are named, for example, <code>doc_01.pdf</code>, <code>doc_02.pdf</code>, <code>doc_03.pdf</code>,
+<code>doc_04.pdf</code>, then you can combine them with the <code>gs</code> command:</p>
+
+<pre><code>    $ gs -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -sOutputFile=mydocument.pdf doc_*.pdf
+</code></pre>
+
+<p>The resulting PDF file will contain all pages from the individual files.</p>
+
+<p><strong>MORE INFO</strong></p>
+
+<p>The <code>gs</code> command is part of the <a href="http://www.ghostscript.com/">ghostscript</a> rpm package.
+You can find more about it using <code>man gs</code>, the documentation file <code>/usr/share/doc/ghostscript-*/index.html</code>
+or <a href="http://www.ghostscript.com">http://www.ghostscript.com</a>.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1178,84 +1241,9 @@ This eliminated the need for constant monitoring by company staff.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/08/22/eagle-auto-transport-launched-its-website-on-drupal/">Eagle Auto Transport launched its website on Drupal</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-08-22T18:47:00+03:00" pubdate data-updated="true">Aug 22<span>nd</span>, 2010</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="/images/eagle_auto_transport_logo.png" alt="logo of Eagle Auto Transport" style="float: right;" /></p>
-
-<p><strong>Customer:</strong> <a href="http://movecareasy.com">Eagle Auto Transport</a></p>
-
-<p><strong>Industry:</strong> Transportation</p>
-
-<p><strong>Geography:</strong> United States</p>
-
-<p><strong>Business challenge:</strong> Create a website with customized functionality</p>
-
-<p><strong>Solution:</strong> Website built using Drupal and additional programming</p>
-
-<p><strong>Software:</strong> <a href="http://drupal.org">Drupal</a>, custom modules and themes</p>
-
-<p><strong>Hardware:</strong> no</p>
-
-<p><strong>Migration:</strong> no</p>
-
-<p><strong>Advantages:</strong> modern website with a form for inquiries</p>
-
-<h2>BACKGROUND</h2>
-
-<p>Eagle Auto Transport is a company offering vehicles transport - cars, vans, motorcycles and more.
-The company specializes in door to door shipments.</p>
-
-<h2>BUSINESS CHALLENGE</h2>
-
-<p>The key business challenge for the company is building a modern web site, defining its graphic vision and the ability to process
-business tailored inquiries from site visitors.</p>
-
-<h2>SOLUTION</h2>
-
-<p>Open Technologies Bulgaria built the website <a href="http://movecareasy.com">http://movecareasy.com</a> using Drupal.
-In addition, we made a custom site theme, module to automatically display images according to predefined settings,
-and module for generating inquiries about transportation price.</p>
-
-<p>Graphic design and logo are made by <a href="http://www.novsait.eu">Georgi Atanasov</a>.</p>
-
-<h2>BENEFITS</h2>
-
-<p>With its web site Eagle Auto Transport launched their online presence hoping to get access to more potential customers.
-Specialized form to generate price inquiries allows the company to reduce the time spent talking on the phone and send a reply via email.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -1266,6 +1254,10 @@ Specialized form to generate price inquiries allows the company to reduce the ti
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/07/12/combining-pdf-files-on-the-command-line/">Combining PDF files on the command line</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2012/06/14/thinkpad-mini-dock-design-flaw/">ThinkPad Mini Dock design flaw</a>
@@ -1281,10 +1273,6 @@ Specialized form to generate price inquiries allows the company to reduce the ti
     
       <li class="post">
         <a href="/blog/2011/09/15/protected-rpm-repositories-with-yum-and-ssl/">Protected RPM repositories with yum and SSL</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/08/22/opencode-systems-improves-software-testing-with-open-source-tools/">Opencode Systems improves software testing with open source tools</a>
       </li>
     
   </ul>

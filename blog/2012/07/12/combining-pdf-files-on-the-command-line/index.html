@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>BebeKarta runs on Drupal - Open Technologies Bulgaria</title>
+  <title>Combining PDF files on the command line - Open Technologies Bulgaria</title>
   <meta name="author" content="Open Technologies Bulgaria">
 
   
-  <meta name="description" content="Customer: BebeKarta Industry: Internet/Community website Geography: Bulgaria Business challenge: Create website for small advertisements with free/ &hellip;">
+  <meta name="description" content="VERSION Red Hat Enterprise Linux 6 PROBLEM You have to create a single PDF file by combining multiple files -
+for example individually scanned pages &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://otb.bg/blog/2012/01/04/bebekarta-runs-on-drupal">
+  <link rel="canonical" href="http://otb.bg/blog/2012/07/12/combining-pdf-files-on-the-command-line">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -79,7 +80,7 @@
   
   <header>
     
-      <h1 class="entry-title">BebeKarta runs on Drupal</h1>
+      <h1 class="entry-title">Combining PDF files on the command line</h1>
     
     
       <p class="meta">
@@ -95,55 +96,41 @@
   
 
 
-<time datetime="2012-01-04T22:21:00+02:00" pubdate data-updated="true">Jan 4<span>th</span>, 2012</time>
+<time datetime="2012-07-12T11:06:00+03:00" pubdate data-updated="true">Jul 12<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p><img src="/images/bebekarta.png" alt="logo of "style="float: right;" /></p>
+<div class="entry-content"><p><strong>VERSION</strong></p>
 
-<p><strong>Customer:</strong> <a href="http://bebekarta.com/">BebeKarta</a></p>
+<p>Red Hat Enterprise Linux 6</p>
 
-<p><strong>Industry:</strong> Internet/Community website</p>
+<p><strong>PROBLEM</strong></p>
 
-<p><strong>Geography:</strong> Bulgaria</p>
+<p>You have to create a single PDF file by combining multiple files -
+for example individually scanned pages.</p>
 
-<p><strong>Business challenge:</strong> Create website for small advertisements with free/paid options</p>
+<p><strong>ASSUMPTIONS</strong></p>
 
-<p><strong>Solution:</strong> Drupal based website, custom programming and configuration</p>
+<p>You know how to start a shell and havigate to the directory containing the files.</p>
 
-<p><strong>Software:</strong> <a href="http://drupal.org">Drupal</a></p>
+<p><strong>SOLUTION</strong></p>
 
-<p><strong>Hardware:</strong> N/A</p>
+<p>If individual PDF files are named, for example, <code>doc_01.pdf</code>, <code>doc_02.pdf</code>, <code>doc_03.pdf</code>,
+<code>doc_04.pdf</code>, then you can combine them with the <code>gs</code> command:</p>
 
-<p><strong>Migration:</strong> no</p>
+<pre><code>    $ gs -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -sOutputFile=mydocument.pdf doc_*.pdf
+</code></pre>
 
-<p><strong>Advantages:</strong> Flexible website</p>
+<p>The resulting PDF file will contain all pages from the individual files.</p>
 
-<h2>BACKGROUND</h2>
+<p><strong>MORE INFO</strong></p>
 
-<p>BebeKarta is a website for mothers to exchange or re-sell used and new kid items. It can also be
-used from merchants to promote new articles to their target audience.</p>
-
-<h2>BUSINESS CHALLENGE</h2>
-
-<p>To create easy to use and maintain website with free/paid subscriptions and integration into SMS
-payment gateway.</p>
-
-<h2>SOLUTION</h2>
-
-<p>Open Technologies Bulgaria was selected to develop a Drupal based website which integrates a good
-amount of standard Drupal modules. During the development process we had to adjust some modules to
-avoid bugs or unwanted functionality. We developed additional modules to integrate with SMS payment
-gateway <a href="http://mobio.bg">Mobio</a> and allow for content expiration based on subscriptions.</p>
-
-<p>Graphic design is made by <a href="http://www.novsait.eu">Georgi Atanasov</a>.</p>
-
-<h2>BENEFITS</h2>
-
-<p>Flexible website which is easy to use and doesn&#8217;t require technical expertise to maintain.</p>
+<p>The <code>gs</code> command is part of the <a href="http://www.ghostscript.com/">ghostscript</a> rpm package.
+You can find more about it using <code>man gs</code>, the documentation file <code>/usr/share/doc/ghostscript-*/index.html</code>
+or <a href="http://www.ghostscript.com">http://www.ghostscript.com</a>.</p>
 </div>
 
 
@@ -166,12 +153,12 @@ gateway <a href="http://mobio.bg">Mobio</a> and allow for content expiration bas
   
 
 
-<time datetime="2012-01-04T22:21:00+02:00" pubdate data-updated="true">Jan 4<span>th</span>, 2012</time>
+<time datetime="2012-07-12T11:06:00+03:00" pubdate data-updated="true">Jul 12<span>th</span>, 2012</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/drupal/'>Drupal</a>, <a class='category' href='/blog/categories/customers/'>customers</a>
+    <a class='category' href='/blog/categories/red-hat-enterprise-linux/'>Red Hat Enterprise Linux</a>, <a class='category' href='/blog/categories/tips/'>Tips</a>
   
 </span>
 
@@ -180,7 +167,7 @@ gateway <a href="http://mobio.bg">Mobio</a> and allow for content expiration bas
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://otb.bg/blog/2012/01/04/bebekarta-runs-on-drupal/" data-via="" data-counturl="http://otb.bg/blog/2012/01/04/bebekarta-runs-on-drupal/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://otb.bg/blog/2012/07/12/combining-pdf-files-on-the-command-line/" data-via="" data-counturl="http://otb.bg/blog/2012/07/12/combining-pdf-files-on-the-command-line/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -193,14 +180,18 @@ gateway <a href="http://mobio.bg">Mobio</a> and allow for content expiration bas
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2011/09/15/protected-rpm-repositories-with-yum-and-ssl/" title="Previous Post: Protected RPM repositories with yum and SSL">&laquo; Protected RPM repositories with yum and SSL</a>
+        <a class="basic-alignment left" href="/blog/2012/06/14/thinkpad-mini-dock-design-flaw/" title="Previous Post: ThinkPad Mini Dock design flaw">&laquo; ThinkPad Mini Dock design flaw</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/05/27/fosscourse-migrates-to-github/" title="Next Post: fosscourse migrates to GitHub">fosscourse migrates to GitHub &raquo;</a>
       
     </p>
   </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -251,6 +242,22 @@ gateway <a href="http://mobio.bg">Mobio</a> and allow for content expiration bas
 
 </footer>
   
+
+<script type="text/javascript">
+      var disqus_shortname = 'otb-blog';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://otb.bg/blog/2012/07/12/combining-pdf-files-on-the-command-line/';
+        var disqus_url = 'http://otb.bg/blog/2012/07/12/combining-pdf-files-on-the-command-line/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 

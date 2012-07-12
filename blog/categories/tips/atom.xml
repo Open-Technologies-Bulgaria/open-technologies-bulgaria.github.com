@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Tips | Open Technologies Bulgaria]]></title>
+  <link href="http://otb.bg/blog/categories/tips/atom.xml" rel="self"/>
+  <link href="http://otb.bg/"/>
+  <updated>2012-07-12T11:19:03+03:00</updated>
+  <id>http://otb.bg/</id>
+  <author>
+    <name><![CDATA[Open Technologies Bulgaria]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Combining PDF files on the command line]]></title>
+    <link href="http://otb.bg/blog/2012/07/12/combining-pdf-files-on-the-command-line/"/>
+    <updated>2012-07-12T11:06:00+03:00</updated>
+    <id>http://otb.bg/blog/2012/07/12/combining-pdf-files-on-the-command-line</id>
+    <content type="html"><![CDATA[<p><strong>VERSION</strong></p>
+
+<p>Red Hat Enterprise Linux 6</p>
+
+<p><strong>PROBLEM</strong></p>
+
+<p>You have to create a single PDF file by combining multiple files -
+for example individually scanned pages.</p>
+
+<p><strong>ASSUMPTIONS</strong></p>
+
+<p>You know how to start a shell and havigate to the directory containing the files.</p>
+
+<p><strong>SOLUTION</strong></p>
+
+<p>If individual PDF files are named, for example, <code>doc_01.pdf</code>, <code>doc_02.pdf</code>, <code>doc_03.pdf</code>,
+<code>doc_04.pdf</code>, then you can combine them with the <code>gs</code> command:</p>
+
+<pre><code>    $ gs -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -sOutputFile=mydocument.pdf doc_*.pdf
+</code></pre>
+
+<p>The resulting PDF file will contain all pages from the individual files.</p>
+
+<p><strong>MORE INFO</strong></p>
+
+<p>The <code>gs</code> command is part of the <a href="http://www.ghostscript.com/">ghostscript</a> rpm package.
+You can find more about it using <code>man gs</code>, the documentation file <code>/usr/share/doc/ghostscript-*/index.html</code>
+or <a href="http://www.ghostscript.com">http://www.ghostscript.com</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>
