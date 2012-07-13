@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Red Hat Enterprise Linux | Open Technologies Bulgaria]]></title>
   <link href="http://otb.bg/blog/categories/red-hat-enterprise-linux/atom.xml" rel="self"/>
   <link href="http://otb.bg/"/>
-  <updated>2012-07-12T11:19:03+03:00</updated>
+  <updated>2012-07-13T13:53:10+03:00</updated>
   <id>http://otb.bg/</id>
   <author>
     <name><![CDATA[Open Technologies Bulgaria]]></name>
@@ -12,6 +12,82 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Mission impossible - ABRT Bugzilla plugin on RHEL6]]></title>
+    <link href="http://otb.bg/blog/2012/07/13/mission-impossible-abrt-bugzilla-plugin-on-rhel6/"/>
+    <updated>2012-07-13T13:21:00+03:00</updated>
+    <id>http://otb.bg/blog/2012/07/13/mission-impossible-abrt-bugzilla-plugin-on-rhel6</id>
+    <content type="html"><![CDATA[<p>Some time ago Red Hat introduced Automatic Bug Reporting Tool to their Red Hat Enterprise Linux
+platform. This is a nice tool which lets users report bugs easily to Red Hat.
+However one of the plugins in the latest version doesn't seem usable at all.</p>
+
+<p>First make sure you have <code>libreport-plugin-bugzilla</code> package installed. This is the plugin to
+report bugs directly to <a href="https://bugzilla.redhat.com">Bugzilla</a>. It may not be installed by default
+because customers are supposed to report issues to Support first - this is why they pay anyway.
+If you are a tech savvy user though, you may want to skip Support and go straight to the developers.</p>
+
+<p>To enable Bugzilla plugin:</p>
+
+<ul>
+<li><p>Edit the file <code>/etc/libreport/events.d/bugzilla_event.conf</code> change the line</p>
+
+<pre><code>  EVENT=report_Bugzilla analyzer=libreport reporter-bugzilla -b
+</code></pre></li>
+</ul>
+
+
+<p>to</p>
+
+<pre><code>    EVENT=report_Bugzilla reporter-bugzilla -b
+</code></pre>
+
+<ul>
+<li><p>Make sure ABRT will collect meaningful backtrace. If debuginfo is missing it will not let you continue.
+Edit the file <code>/etc/libreport/events.d/ccpp_event.conf</code>. There should be something like this:</p>
+
+<pre><code>  EVENT=analyze_LocalGDB analyzer=CCpp
+          abrt-action-analyze-core --core=coredump -o build_ids &amp;&amp;
+          abrt-action-generate-backtrace &amp;&amp;
+          abrt-action-analyze-backtrace
+          (
+              bug_id=$(reporter-bugzilla -h `cat duphash`) &amp;&amp;
+              if test -n "$bug_id"; then
+                  abrt-bodhi -r -b $bug_id
+              fi
+          )
+</code></pre></li>
+<li><p>Change it to look like this - i.e. add the missing <code>/usr/libexec/</code> line:</p>
+
+<pre><code>  EVENT=analyze_LocalGDB analyzer=CCpp
+          abrt-action-analyze-core --core=coredump -o build_ids &amp;&amp;
+          /usr/libexec/abrt-action-install-debuginfo-to-abrt-cache --size_mb=4096 &amp;&amp;
+          abrt-action-generate-backtrace &amp;&amp;
+          abrt-action-analyze-backtrace &amp;&amp;
+          (
+              bug_id=$(reporter-bugzilla -h `cat duphash`) &amp;&amp;
+              if test -n "$bug_id"; then
+                  abrt-bodhi -r -b $bug_id
+              fi
+          )
+</code></pre></li>
+</ul>
+
+
+<p>Supposedly after everything is configured properly ABRT will install missing debuginfo packages,
+generate the backtrace and let you report it to Bugzilla. Because of
+<a href="https://bugzilla.redhat.com/show_bug.cgi?id=759443">bug 759443</a> this will not happen.</p>
+
+<p>To work around the problem you can try to manually install the missing debuginfo packages.
+Go to your system profile in RHN and subscribe the system to all appropriate debuginfo channels.
+Then install the packages. In my case:</p>
+
+<pre><code>    # debuginfo-install firefox
+</code></pre>
+
+<p>And finally - <a href="https://bugzilla.redhat.com/show_bug.cgi?id=800754">bug 800754</a> which was already reported!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Combining PDF files on the command line]]></title>
@@ -423,69 +499,6 @@ Students in the school have experience with Linux and working with the new syste
 <p>Photos of the testing process and use of the new class room can be found at
 <a href="http://www.facebook.com/media/set/?set=a.203913389618853.54571.180150925328433">http://www.facebook.com/media/set/?set=a.203913389618853.54571.180150925328433</a>
 Video can be seen at <a href="http://www.youtube.com/watch?v=7GYbCDGTz-4">http://www.youtube.com/watch?v=7GYbCDGTz-4</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[DCH becomes Red Hat ISV partner]]></title>
-    <link href="http://otb.bg/blog/2011/01/20/dch-becomes-red-hat-isv-partner/"/>
-    <updated>2011-01-20T19:12:00+02:00</updated>
-    <id>http://otb.bg/blog/2011/01/20/dch-becomes-red-hat-isv-partner</id>
-    <content type="html"><![CDATA[<p><img src="http://otb.bg/images/dch_logo.jpg" alt="logo of "style="float: right;" /></p>
-
-<p><strong>Customer:</strong> <a href="http://www.liquidity-quants.com">DCH LLC.</a></p>
-
-<p><strong>Industry:</strong> Information Technology</p>
-
-<p><strong>Geography:</strong> Bulgaria</p>
-
-<p><strong>Business challenge:</strong> Build IT infrastructure, present new product to market</p>
-
-<p><strong>Solution:</strong> Build virtual machines farm and business consulting</p>
-
-<p><strong>Software:</strong> Red Hat Enterprise Linux Server 6</p>
-
-<p><strong>Hardware:</strong> Fujitsu <a href="http://ts.fujitsu.com/products/standard_servers/tower/primergy_tx100s2.html">Primergy TX100 S2</a></p>
-
-<p><strong>Migration:</strong> no</p>
-
-<p><strong>Advantages:</strong> Dynamic use of IT resources, fast product development</p>
-
-<h2>BACKGROUND</h2>
-
-<p>DCH LLC is a young Bulgarian company, which offers financial risk management software.
-The focus of the company is to assess liquidity risk for international customers.</p>
-
-<p>Software solutions of DCH LLC are developed on Linux and partnering with the leading open source provider - Red Hat - was an obvious next step.</p>
-
-<h2>BUSINESS CHALLENGE</h2>
-
-<p>The main business challenges of the company was building a computing infrastructure that will be used for development, testing and demonstration of their software solutions
-and creating partnerships in the Linux field.</p>
-
-<h2>SOLUTION</h2>
-
-<p>Open Technologies Bulgaria was selected to implement the necessary infrastructure and provide advisory services on a partnership with Red Hat.</p>
-
-<p>Implemented infrastructure is a farm of virtual machines. It includes instances for development and testing,
-source code repository server, demonstration server, database and others. All virtual machines are installed with Red Hat Enterprise Linux 6,
-which is the main platform for development of the company products.</p>
-
-<p>DCH LLC sought our consulting services to gain a better understanding of different types of Red Hat affiliate programs and the advantages thereof.
-As a result, the company chose to apply for an independent software vendor partnership.</p>
-
-<h2>BENEFITS</h2>
-
-<p>Implemented infrastructure of virtual machines allows the company to quickly and easily experiment with new versions and technologies
-in order to offer attractive solutions to its customers. Completely virtual environment allows better use of resources and allows dynamics in their distribution,
-thereby reducing the operating costs of the company.</p>
-
-<p>DCH's partnership with Red Hat provides the company access to a stable Linux platform and guaranteed technical support.
-The company can focus its resources on developing its core products rather than to continuously monitor changes in Linux distributions
-and deal with compatibility problems. This avoids the waste of staff and excess labor, which is useful for the company and its customers.</p>
-
-<p>DCH extended its market visibility, because many of the financial institutions use Red Hat Enterprise Linux.
-This way, DCH offers a solution that is ready for use.</p>
 ]]></content>
   </entry>
   
