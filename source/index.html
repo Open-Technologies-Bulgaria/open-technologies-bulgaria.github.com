@@ -18,10 +18,8 @@
 <div id="logo-sub"><em>research, test &amp; deploy</em></div>
 </div>
 <div id="qa" class="popup notop" onclick='dijit.byId("dlgSol").show()'><h1 class="bottom">Quality Engineering</h1></div>
-<div id="cloud" class="popup notop fright" onclick='dijit.byId("dlgSol").show()'><h1 class="bottom">Cloud Computing</h1></div>
-<div style="clear:both;"></div>
-<div id="oss" class="popup" onclick='dijit.byId("dlgSol").show()'><h1 class="bottom">Open Source</h1></div>
-<div id="certified" class="popup fright" onclick='dijit.byId("dlgSol").show()'><h1 class="bottom">RedHat Certified</h1></div>
+<div id="cloud" class="popup notop" onclick='dijit.byId("dlgSol").show()'><h1 class="bottom">Cloud Computing</h1></div>
+<div id="certified" class="popup notop fright" onclick='dijit.byId("dlgSol").show()'><h1 class="bottom">RedHat Certified</h1></div>
 </div>
 <div id="footer" class="content">
 <a href="#" onclick='dijit.byId("dlgAbout").show()'>about</a> |
@@ -33,7 +31,7 @@
 </div>
 <div id="dlgSol" data-dojo-type="dojox.widget.Dialog" class="claro dialog" dimensions="[1000,800]" style="display: none;">
 <h3>Software Quality Engineering</h3>
-Our staff has 5+ years of experience in the field of quality engineering. We can build internal test labs,
+Our staff has 6+ years of experience in the field of quality engineering. We can build internal test labs,
 deploy test case management systems, organize QA and development processes and more. We're actively researching
 and exprimenting with testing in the cloud.
 
@@ -72,19 +70,28 @@ Our favourite ones are <a href="http://djangoproject.com">Django</a> and <a href
 We can do anything from custom themes to modules and core patches. In addition to that we've done countless of
 small bug fixes and patches for many projects and will continue to do so. If you need a hand, we can help.
 
-<h3>Voyager</h3>
+<h3>Past projects</h3>
+<ul>
+    <li>
+<h4>Voyager</h4>
 Voyager is a simple software distribution platform for Linux. It provides access control for yum repositories so that
 only authorized customers are able to download and install the software. The platform consists of a yum plugin,
 Drupal interface to manage accounts and subscriptions and a CGI process installed on the HTTP server.
-We're using Voyager to provide add-on software to our clients.
+    </li>
 
-<h3>Linux multi-seat</h3>
+    <li>
+<h4>Linux multi-seat</h4>
 Multi-seat allows more people to share the same computer and utilize the resources.
 We've been involved in designing multi-seat solutions since 2009.
-Recent Fedora 17 includes multi-seat support with USB hardware such as the one from <a href="http://plugable.com">Plugable Technologies</a>.
-We continue to maintain and support our own multi-seat offering called SUMU, based on Red Hat Enterprise Linux 6.
 You can find <a href="http://www.youtube.com/watch?v=7GYbCDGTz-4">video</a> and
-<a href="https://www.facebook.com/media/set/?set=a.203913389618853.54571.180150925328433&amp;type=3">pictures</a> of it.
+<a href="https://www.facebook.com/media/set/?set=a.203913389618853.54571.180150925328433&amp;type=3">pictures</a> of
+our own multi-seat offering called SUMU, based on Red Hat Enterprise Linux 6.
+
+Recent Fedora 17 includes multi-seat support with USB hardware such as the one from <a href="http://plugable.com">Plugable Technologies</a>
+and it is pretty much plug and play so we have discontinued our offering in favour of the upstream solution.
+    </li>
+</ul>
+
 </div>
 <div id="dlgProj" data-dojo-type="dojox.widget.Dialog" class="claro dialog" dimensions="[400,100]" style="display: none;">
 We work open source! Period! You can find our projects at:
