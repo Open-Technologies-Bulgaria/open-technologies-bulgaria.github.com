@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Red Hat Enterprise Linux | Open Technologies Bulgaria]]></title>
   <link href="http://otb.bg/blog/categories/red-hat-enterprise-linux/atom.xml" rel="self"/>
   <link href="http://otb.bg/"/>
-  <updated>2013-06-01T00:06:56+03:00</updated>
+  <updated>2013-09-22T21:34:31+03:00</updated>
   <id>http://otb.bg/</id>
   <author>
     <name><![CDATA[Open Technologies Bulgaria]]></name>
@@ -12,118 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Mission impossible - ABRT Bugzilla plugin on RHEL6]]></title>
-    <link href="http://otb.bg/blog/2012/07/13/mission-impossible-abrt-bugzilla-plugin-on-rhel6/"/>
-    <updated>2012-07-13T13:21:00+03:00</updated>
-    <id>http://otb.bg/blog/2012/07/13/mission-impossible-abrt-bugzilla-plugin-on-rhel6</id>
-    <content type="html"><![CDATA[<p>Some time ago Red Hat introduced Automatic Bug Reporting Tool to their Red Hat Enterprise Linux
-platform. This is a nice tool which lets users report bugs easily to Red Hat.
-However one of the plugins in the latest version doesn't seem usable at all.</p>
-
-<p>First make sure you have <code>libreport-plugin-bugzilla</code> package installed. This is the plugin to
-report bugs directly to <a href="https://bugzilla.redhat.com">Bugzilla</a>. It may not be installed by default
-because customers are supposed to report issues to Support first - this is why they pay anyway.
-If you are a tech savvy user though, you may want to skip Support and go straight to the developers.</p>
-
-<p>To enable Bugzilla plugin:</p>
-
-<ul>
-<li><p>Edit the file <code>/etc/libreport/events.d/bugzilla_event.conf</code> change the line</p>
-
-<pre><code>  EVENT=report_Bugzilla analyzer=libreport reporter-bugzilla -b
-</code></pre></li>
-</ul>
-
-
-<p>to</p>
-
-<pre><code>    EVENT=report_Bugzilla reporter-bugzilla -b
-</code></pre>
-
-<ul>
-<li><p>Make sure ABRT will collect meaningful backtrace. If debuginfo is missing it will not let you continue.
-Edit the file <code>/etc/libreport/events.d/ccpp_event.conf</code>. There should be something like this:</p>
-
-<pre><code>  EVENT=analyze_LocalGDB analyzer=CCpp
-          abrt-action-analyze-core --core=coredump -o build_ids &amp;&amp;
-          abrt-action-generate-backtrace &amp;&amp;
-          abrt-action-analyze-backtrace
-          (
-              bug_id=$(reporter-bugzilla -h `cat duphash`) &amp;&amp;
-              if test -n "$bug_id"; then
-                  abrt-bodhi -r -b $bug_id
-              fi
-          )
-</code></pre></li>
-<li><p>Change it to look like this - i.e. add the missing <code>/usr/libexec/</code> line:</p>
-
-<pre><code>  EVENT=analyze_LocalGDB analyzer=CCpp
-          abrt-action-analyze-core --core=coredump -o build_ids &amp;&amp;
-          /usr/libexec/abrt-action-install-debuginfo-to-abrt-cache --size_mb=4096 &amp;&amp;
-          abrt-action-generate-backtrace &amp;&amp;
-          abrt-action-analyze-backtrace &amp;&amp;
-          (
-              bug_id=$(reporter-bugzilla -h `cat duphash`) &amp;&amp;
-              if test -n "$bug_id"; then
-                  abrt-bodhi -r -b $bug_id
-              fi
-          )
-</code></pre></li>
-</ul>
-
-
-<p>Supposedly after everything is configured properly ABRT will install missing debuginfo packages,
-generate the backtrace and let you report it to Bugzilla. Because of
-<a href="https://bugzilla.redhat.com/show_bug.cgi?id=759443">bug 759443</a> this will not happen.</p>
-
-<p>To work around the problem you can try to manually install the missing debuginfo packages.
-Go to your system profile in RHN and subscribe the system to all appropriate debuginfo channels.
-Then install the packages. In my case:</p>
-
-<pre><code>    # debuginfo-install firefox
-</code></pre>
-
-<p>And finally - <a href="https://bugzilla.redhat.com/show_bug.cgi?id=800754">bug 800754</a> which was already reported!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Combining PDF files on the command line]]></title>
-    <link href="http://otb.bg/blog/2012/07/12/combining-pdf-files-on-the-command-line/"/>
-    <updated>2012-07-12T11:06:00+03:00</updated>
-    <id>http://otb.bg/blog/2012/07/12/combining-pdf-files-on-the-command-line</id>
-    <content type="html"><![CDATA[<p><strong>VERSION</strong></p>
-
-<p>Red Hat Enterprise Linux 6</p>
-
-<p><strong>PROBLEM</strong></p>
-
-<p>You have to create a single PDF file by combining multiple files -
-for example individually scanned pages.</p>
-
-<p><strong>ASSUMPTIONS</strong></p>
-
-<p>You know how to start a shell and havigate to the directory containing the files.</p>
-
-<p><strong>SOLUTION</strong></p>
-
-<p>If individual PDF files are named, for example, <code>doc_01.pdf</code>, <code>doc_02.pdf</code>, <code>doc_03.pdf</code>,
-<code>doc_04.pdf</code>, then you can combine them with the <code>gs</code> command:</p>
-
-<pre><code>    $ gs -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -sOutputFile=mydocument.pdf doc_*.pdf
-</code></pre>
-
-<p>The resulting PDF file will contain all pages from the individual files.</p>
-
-<p><strong>MORE INFO</strong></p>
-
-<p>The <code>gs</code> command is part of the <a href="http://www.ghostscript.com/">ghostscript</a> rpm package.
-You can find more about it using <code>man gs</code>, the documentation file <code>/usr/share/doc/ghostscript-*/index.html</code>
-or <a href="http://www.ghostscript.com">http://www.ghostscript.com</a>.</p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[Opencode Systems improves software testing with open source tools]]></title>
@@ -190,257 +78,6 @@ will provide additional benefits to Opencode.</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[USB multi-seat on Red Hat Enterprise Linux 6]]></title>
-    <link href="http://otb.bg/blog/2011/03/14/usb-multi-seat-on-red-hat-enterprise-linux-6/"/>
-    <updated>2011-03-14T20:10:00+02:00</updated>
-    <id>http://otb.bg/blog/2011/03/14/usb-multi-seat-on-red-hat-enterprise-linux-6</id>
-    <content type="html"><![CDATA[<p>Multiseat configurations are well known in the Linux community and have been used for a number of years now. In the last few years USB docking stations emerged on the market and are becoming popular among multiseat enthusiasts.</p>
-
-<p>Open Technologies Bulgaria, Ltd. offers full support of USB multiseat for Red Hat Enterprise Linux 6 as a downstream vendor. We use the name SUMU (simple usb multi user) to refer to the entire multiseat bundle and in this article I'm going to describe the current state of technologies surrounding multiseat, how that works on RHEL6 and some practical observations.</p>
-
-<h2>COMPONENTS</h2>
-
-<p>To build a multiseat system you need a number of individual components:</p>
-
-<p><img src="http://otb.bg/images/plugable_docking_station.png" alt="UD-160-A" style="float: right;"/></p>
-
-<ul>
-  <li>
-    USB docking station like Plugable's <a href="http://plugable.com/products/UD-160-A">UD-160-A</a> or a combination of <a href="http://plugable.com/products/">USB video card</a> and stand alone USB hub. It is also possible to use USB docking stations from other vendors but I'm not aware of anyone who did it.
-  </li>
-
-  <li>
-<em>udlfb</em> - a kernel driver for USB graphics adapters which use DisplayLink based chips. As of January 2011 udlfb.c is part of the mainline kernel tree and is on track for 2.6.38. On RHEL6 this can easily be built as a stand alone module. There are no issues with this package.
-
-We also use a custom patch that will draw the string "fbX" onto the green screen. This is useful for easier identification of the display. The patch can be found <a href="http://otb-sources.googlecode.com/svn/trunk/sumu/udlfb-kmod/fbX-numbering.patch">here</a>.
-  </li>
-
-  <li>
-<em>Xorg</em> - this is the standard graphics server on Linux. In RHEL 6 we have xorg-x11-server-Xorg-1.7.7-26 which works perfectly in a multiseat environment.
-  </li>
-
-  <li>
-<em>xorg-x11-drv-fbdev</em> with extensions - Xorg driver based on the <em>fbdev</em> driver. The extensions add support for the X DAMAGE protocol. This is a temporary solution until Xorg adds support for the damage protocol. Our package is called <em>xorg-x11-drv-fbdev-displaylink</em> to avoid conflict with the stock package provided by the distribution and it installs the files in <em>/usr/local</em>. You can also change the compiler flags and produce a binary under a different name (say <em>displaylink_drv.so</em> instead of <em>fbdev_drv.so</em>).
-  </li>
-
-  <li>
-<em>GDM</em> with multiseat support - GDM will manage multiple local displays and has the ability to add/remove displays dynamically. This functionality is present in versions up to 2.20 and since RHEL6 includes gdm-2.30.4-21.el6 this is a tough choice. There are several possibilities:
-<ol>
-  <li>
-Use older <em>GDM</em>, preferably from a previous RHEL release. This gives you a tested piece of software and as long as the previous release is maintained you have (at least some) opportunity of fixing bugs in this code base. However this conflicts with current <em>GDM</em> in the distro which is also integrated with <em>ConsoleKit</em>, <em>Plymouth</em> and <em>PulseAudio</em>.
-  </li>
-
-  <li>
-Use <em>GDM</em> and <em>ConsoleKit</em> that are available in RHEL6 and apply the multiseat patches available at
-https://bugs.freedesktop.org/show_bug.cgi?id=19333 and http://bugzilla.gnome.org/show_bug.cgi?id=536355.
-
-Those patches are quite big (around 3000 lines each) and are not yet fully integrated upstream. They also conflict with custom patches that Red Hat is shipping into these packages. Your patched packages will also conflict with the stock distro packages and you will not receive any support for that. Since <em>ConsoleKit</em> seems like fairly important application I'd not recommend modifying it.
-  </li>
-
-  <li>
-Use another display manager that can handle multiple displays. https://help.ubuntu.com/community/MultiseatX suggests to use <em>KDM</em> instead of <em>GDM</em>. As far as I can tell the configuration is only static and this can break any time due to the fact that USB device discovery is unpredictable and unreliable. It also lacks an alternative for <em>gdmdynamic</em> according to http://lists.kde.org/?l=kde-devel&m=129898381127854&w=2 which makes it a no-go for plug-and-play multiseat support.
-
-There are other less popular display managers but I haven't spend much time in research.
-  </li>
-
-  <li>
-Just for the record it is also possible that one writes a custom display manager for multiseat operations. This sounds like an overkill and there are many factors which need to be taken into account. If you have enough resources and knowledge to write a display manager you'd better give upstream a hand instead of reinventing the wheel. 
-  </li>
-</ol>
-
-We've decided to use <em>GDM 2.16</em> from RHEL5 due to the above factors. In practice it turns out that there aren't many issues with this version.
-  </li>
-
-  <li>
-<em>A GDM theme</em> - since the GDM version we're using requires a theme which is missing in RHEL6 this is also provided as a separate package. A GDM theme is an XML file plus some images.
-  </li>
-
-  <li>
-<em>udev rules, scripts and config files</em> - this is the glue between all the other components. Their primary job is to group the display-mouse-keyboard pairs for a given seat and start the display with the appropriate configuration settings. We also have support for <em>PulseAudio</em>.
-  </li>
-</ul>
-
-
-<h2>RHEL6 SPECIFICS</h2>
-
-<p>For detailed description of multiseat configuration take a look at http://plugable.com/2009/11/16/setting-up-usb-multiseat-with-displaylink-on-linux-gdm-up-to-2-20/ or at our <a href="http://otb-sources.googlecode.com/svn/trunk/sumu/">source code</a>. I'm going to describe only the differences in RHEL6.</p>
-
-<p><em>GDM</em>, <em>udlfb</em> and <em>xorg-x11-drv-fbdev-displaylink</em> need to be compiled and installed on the system.</p>
-
-<p>To build an older <em>GDM</em> on RHEL6 you will need to adjust some of the patches in the src.rpm package to apply cleanly and tweak the .spec file to your needs. This also includes using the appropriate version of <em>ltmain.sh</em> from the distro.</p>
-
-<p>The udev rules and scripts are slightly different due to the different device paths in RHEL6:
-``` bash
-SYSFS{idVendor}=="17e9", SYSFS{bConfigurationValue}=="2", RUN="/bin/echo 1 > /sys%p/bConfigurationValue"</p>
-
-<p>ACTION=="add",    KERNEL=="fb<em>", SUBSYSTEM=="graphics", SUBSYSTEMS=="usb", PROGRAM="/usr/bin/sumu-hub-id /sys/%p/device/../", SYMLINK+="usbseat/%c/display",  RUN+="/etc/udev/scripts/start-seat %c"
-ACTION=="remove", KERNEL=="fb</em>", SUBSYSTEM=="graphics", RUN+="/etc/udev/scripts/stop-seat %k"</p>
-
-<p>KERNEL=="control<em>", SUBSYSTEM=="sound", BUS=="usb", PROGRAM="/usr/bin/sumu-hub-id /sys/%p/device/../../../../", SYMLINK+="usbseat/%c/sound"
-KERNEL=="event</em>", SUBSYSTEM=="input", BUS=="usb", SYSFS{bInterfaceClass}=="03", SYSFS{bInterfaceProtocol}=="01", PROGRAM="/usr/bin/sumu-hub-id /sys/%p/device/../../../../", SYMLINK+="usbseat/%c/keyboard", RUN+="/etc/udev/scripts/start-seat %c"
-KERNEL=="event*", SUBSYSTEM=="input", BUS=="usb", SYSFS{bInterfaceClass}=="03", SYSFS{bInterfaceProtocol}=="02", PROGRAM="/usr/bin/sumu-hub-id /sys/%p/device/../../../../", SYMLINK+="usbseat/%c/mouse",    RUN+="/etc/udev/scripts/start-seat %c"
-```</p>
-
-<p>We also use only <em>/dev/event*</em> devices for both mouse and keyboard.</p>
-
-<p>The <em>sumu-hub-id</em> script returns the string busX-devY indicating the location of the device:
-``` bash</p>
-
-<h1>!/bin/bash</h1>
-
-<p>if [ -d "$1" ]; then</p>
-
-<pre><code>echo "bus$(cat $1/busnum)-dev$(cat $1/devnum)"
-exit 0
-</code></pre>
-
-<p>else</p>
-
-<pre><code>exit 1
-</code></pre>
-
-<p>fi
-```</p>
-
-<p>USB device numbering is unique per bus and there isn't a global device identifier as far as I know. On systems with 2 or more USB buses this can lead to mismatch between devices/seats.</p>
-
-<p>For seat/display numbering we use the number of the framebuffer device associated with the seat. This is unique, numbers start from 1 (<em>fb0</em> is the text console) and are sequential unlike USB device numbers. This also ensures easy match between <em>$DISPLAY</em> and <em>/dev/fbX</em> for debugging purposes.</p>
-
-<p>Our <em>xorg.conf.sed</em> template uses evdev as the input driver. This driver is the default in RHEL6:
-```
-Section "InputDevice"</p>
-
-<pre><code>Identifier "keyboard"
-Driver      "evdev"
-Option      "CoreKeyboard"
-Option      "Device"        "/dev/usbseat/%SEAT_PATH%/keyboard"
-Option      "XkbModel"      "evdev"
-</code></pre>
-
-<p>EndSection</p>
-
-<p>Section "InputDevice"</p>
-
-<pre><code>Identifier "mouse"
-Driver      "evdev"
-Option      "CorePointer"
-Option      "Protocol" "auto"
-Option      "Device"   "/dev/usbseat/%SEAT_PATH%/mouse"
-Option      "Buttons" "5"
-Option      "ZAxisMapping" "4 5"
-</code></pre>
-
-<p>EndSection
-```</p>
-
-<p>We also use a custom <em>gdm.conf</em> file to avoid conflicts with stock packages. Only the important settings are shown:
-```
-[daemon]
-AlwaysRestartServer=false
-DynamicXServers=true
-FlexibleXServers=0
-VTAllocation=false</p>
-
-<p>[servers]
-0=inactive
-```</p>
-
-<p>AlwaysRestartServer=false is necessary to avoid a bug in <em>Xorg</em>. See below for issues description.</p>
-
-<p>Audio is supported by setting $PULSE_SINK/$PULSE_SOURCE environment variables using a script in <em>/etc/profile.d</em> which executes after login.</p>
-
-<h2>SCALABILITY AND PERFORMANCE</h2>
-
-<p><strong>Maximum seats</strong>:<br />
-The USB standard specifies a maximum of 127 USB devices connected to a single host controller. This means around 30 seats per USB controller depending on the number of devices connected to a USB hub. In practice you will have hard time finding a system which has that many port available. I've used Fujitsu's <a href="http://ts.fujitsu.com/products/standard_servers/tower/primergy_tx100s1.html">TX100 S1</a> and <a href="http://ts.fujitsu.com/products/standard_servers/tower/primergy_tx100s2.html">TX100 S2</a> which can be expanded to 15 or 16 USB ports using all external and internal ports and additional PCI-USB extension card.</p>
-
-<p>While larger configuration are possible by using more PCI cards or intermediate hubs those are limited by the USB 2.0 transfer speed (more devices on a single hub, slower graphics) and a <a href="https://bugzilla.kernel.org/show_bug.cgi?id=28682">bug</a> in the Linux kernel.</p>
-
-<p><strong>Space and cable length</strong>:<br />
-USB 2.0 limits the cable length to 5 meters. On the market I've found good quality cables running 4.5 meters. This means that your multiseat system needs to be confined is small physical space due to these limitations. In practice using medium sized multiseat system in a 30 square meters space is doable and fits into these limits. This is roughly the size of a class-room in a school.</p>
-
-<p>You can of course use daisy chaining (up to 5 hubs) and active USB extension cords (11 meters) or USB over CAT5 cables (up to 45 meters) but all of these interfere with USB signal strength and can lead to unpredictable behavior. For example I've see errors opening USB devices when power is not sufficient or too high. Modern computer systems have built in hardware protection and shut off USB ports or randomly reboot when the current on the wire is too strong. I've seen this on a number of occasions and the fix was to completely power off and unplug the system then power it on again.</p>
-
-<p>Also don't forget that USB video consumes a great deal of the limited USB 2.0 bandwidth. Depending on the workload of the system (e.g. office applications vs. multimedia) you could experience slow graphical response if using extension cords and daisy chaining.</p>
-
-<p><strong>Performance</strong>:<br />
-For regular desktop use (i.e. nothing in particular) I'd recommend using 32bit operating system. On 64bit systems objects take a lot more memory and you'll need 3-4 times more for the same workload as on 32bit. For example 16 users running Eclipse, gnome-terminal and Firefox will need less that 8GB of memory on 32bit and more than 16GB on 64bit. Python and Java are particularly known to use much more memory on 64bit.</p>
-
-<p>Regular desktop usage is not CPU intensive and a modern Xeon CPU has no issues with it. One exception is Flash which always causes your CPU to choke. On multiseat that becomes even a bigger problem. If possible disable/remove Flash from the system.</p>
-
-<p>Multiseat doesn't make any difference when browsing, sending e-mail, etc. You shouldn't experience issues with networking unless your workload doesn't require hi-speed connection or your bandwidth is too low. If this is the case you'd better use the USB NICs available in the docking stations and bond them together, add external PCI NICs or upgrade your networking infrastructure.</p>
-
-<p>Disk performance is critical in multiseat especially because it affects the look and feel of the system and is visible by the end users. It is usually good practice to place /home on a separate partition and even on a separate disk. Also consider disabling unnecessary caching in user space applications such as Firefox and Nautilus (thumbnails and cache).</p>
-
-<p>On a system with 2 x 7,2K RPM disks in BIOS RAID1 configuration and a standard RHEL6 installation (i.e. no optimizations configured) where /, swap and /home are on the same RAID array we have 15 users using GNOME, gedit, Firefox, gnome-terminal and gcc. The performance is comparable to stand alone desktop with occasional spikes which cause GNOME to freeze for a second or two. It is expected that disabling unnecessary caching will make things better.</p>
-
-<p>Depending on the workload (reads vs. writes) you should consider different RAID levels, file system types and settings and changing disk parameters. A good place to start is the "Storage Administration Guide" and "I/O Tuning Guide" at http://docs.redhat.com.</p>
-
-<h2>KNOWN ISSUES</h2>
-
-<ul>
- <li>
-<a href="https://bugzilla.kernel.org/show_bug.cgi?id=28682">Bug 28682 - input drivers support limited device numbers (EVDEV_MINORS is 32)</a> - this bug will block you from adding more than 32 input devices of the same type. For multiseat that means 32 devices which are handled by the event driver which includes mice, keyboards, joystick and special platform events such as the Reboot/Poweroff buttons. This limits the available seats to around 15.
- </li>
-
- <li>
-<a href="https://bugzilla.redhat.com/show_bug.cgi?id=679122">Bug 679122 - gnome-volume-control: Sound at 100% and no sound output</a> - upon first login the user will not hear any sound regardless of the fact that the volume control application shows volume is at 100%.
- </li>
-
- <li>
-<a href="https://bugzilla.redhat.com/show_bug.cgi?id=682562">Bug 682562 - gnome-volume-control doesn't respect PULSE_SINK/PULSE_SOURCE</a> - the volume control application will not behave correctly and may confuse users.
- </li>
-
- <li>
-Xorg will cause 100% CPU usage after logout - this is due to several factors. The <a href="http://plugable.com/2009/11/16/setting-up-usb-multiseat-with-displaylink-on-linux-gdm-up-to-2-20/">initial multiseat configuration</a> had a problem with input duplication. This was fixed by removing "-sharevts -novtswitch" from the X start line and substituting a specific VT - "vt07". 
-
-This works fine unless one of the users logs out of their GNOME session. After that GDM will kill and restart it's process and new Xorg process will be spawned. The restarted instance will loop endlessly executing the following code:
-
-``` c
-ioctl(5, TCFLSH, 0x2)                   = -1 EIO (Input/output error)
-setitimer(ITIMER_REAL, {it_interval={0, 20000}, it_value={0, 20000}}, NULL) = 0
-clock_gettime(CLOCK_MONOTONIC, {247, 684817842}) = 0
-clock_gettime(CLOCK_MONOTONIC, {247, 684921278}) = 0
-setitimer(ITIMER_REAL, {it_interval={0, 0}, it_value={0, 0}}, NULL) = 0
-select(256, [1 3 5 13 14 15 16], NULL, NULL, {409, 254000}) = 1 (in [5], left {409, 253990})
-ioctl(5, TCFLSH, 0x2)                   = -1 EIO (Input/output error)
-```
-
-If you search on the Internet you will find plenty of bug reports related to this code block. The problem is in <em>Xorg</em> which doesn't properly handle the situation where it can't take control over the terminal. The solution is to not restart <em>Xorg</em> after user session ends. This is done by setting AlwaysRestartServer=false in <em>gdm.conf</em>.
- </li>
-
- <li>
-No integration with <em>SELinux</em> and <em>ConsoleKit</em> - while configuring <em>SELinux</em> in Permissive mode is easy workaround there's no easy workaround for <em>ConsoleKit</em>. 
-
-Newer <em>GDM</em> versions register the user session with <em>ConsoleKit</em> and integrate that into the desktop. Missing integration means that some things will fail. For example <em>NetworkManager</em> will not allow the user to connect to a VPN connection because it thinks this user is not logged in:
-
-```
-** (nm-applet:1168): WARNING **: &lt;WARN&gt;  activate_vpn_cb(): VPN Connection activation failed:
-(org.freedesktop.NetworkManager.PermissionDenied) No user settings service available
-```
-</li>
-
- <li>
-No ACLs for external USB flash drives - this is missing upstream and is supposed to land in <em>ConsoleKit</em>. When a user plugs their USB flash drive on a multiseat system GNOME will try to mount it automatically. If there are multiple users logged in this will either fail or all of them will be able to access the flash drive. 
- </li>
-</ul>
-
-
-<h2>PICTURES AND VIDEO</h2>
-
-<p>Pictures from one of our deployments can be found on Facebook (no login required):
-<a href="http://www.facebook.com/album.php?aid=54571&amp;id=180150925328433">http://www.facebook.com/album.php?aid=54571&amp;id=180150925328433</a>.
-A demonstration video from the same deployment can be found at <a href="http://www.youtube.com/watch?v=7GYbCDGTz-4">http://www.youtube.com/watch?v=7GYbCDGTz-4</a></p>
-
-<p>If you are interested in commercial support please <a href="http://otb.bg/contact">contact us</a>!</p>
-
-<h2>FUTURE</h2>
-
-<p>In the open source world everything is changing and multiseat is no exception. While <em>GDM</em> and <em>ConsoleKit</em> patches are not yet integrated upstream there's a new project called <a href="http://www.freedesktop.org/wiki/Software/systemd">systemd</a> which aims at replacing the SysV init scripts system. It already has several configuration files for multiseat and I expect it will influence multiseat deployments in the future. Systemd will be available in Fedora 15.</p>
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[ElSys uses SUMU for its new computer room]]></title>
     <link href="http://otb.bg/blog/2011/02/28/elsys-uses-sumu-for-its-new-computer-room/"/>
     <updated>2011-02-28T12:00:00+02:00</updated>
@@ -499,6 +136,119 @@ Students in the school have experience with Linux and working with the new syste
 <p>Photos of the testing process and use of the new class room can be found at
 <a href="http://www.facebook.com/media/set/?set=a.203913389618853.54571.180150925328433">http://www.facebook.com/media/set/?set=a.203913389618853.54571.180150925328433</a>
 Video can be seen at <a href="http://www.youtube.com/watch?v=7GYbCDGTz-4">http://www.youtube.com/watch?v=7GYbCDGTz-4</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[DCH becomes Red Hat ISV partner]]></title>
+    <link href="http://otb.bg/blog/2011/01/20/dch-becomes-red-hat-isv-partner/"/>
+    <updated>2011-01-20T19:12:00+02:00</updated>
+    <id>http://otb.bg/blog/2011/01/20/dch-becomes-red-hat-isv-partner</id>
+    <content type="html"><![CDATA[<p><img src="http://otb.bg/images/dch_logo.jpg" alt="logo of "style="float: right;" /></p>
+
+<p><strong>Customer:</strong> <a href="http://www.liquidity-quants.com">DCH LLC.</a></p>
+
+<p><strong>Industry:</strong> Information Technology</p>
+
+<p><strong>Geography:</strong> Bulgaria</p>
+
+<p><strong>Business challenge:</strong> Build IT infrastructure, present new product to market</p>
+
+<p><strong>Solution:</strong> Build virtual machines farm and business consulting</p>
+
+<p><strong>Software:</strong> Red Hat Enterprise Linux Server 6</p>
+
+<p><strong>Hardware:</strong> Fujitsu <a href="http://ts.fujitsu.com/products/standard_servers/tower/primergy_tx100s2.html">Primergy TX100 S2</a></p>
+
+<p><strong>Migration:</strong> no</p>
+
+<p><strong>Advantages:</strong> Dynamic use of IT resources, fast product development</p>
+
+<h2>BACKGROUND</h2>
+
+<p>DCH LLC is a young Bulgarian company, which offers financial risk management software.
+The focus of the company is to assess liquidity risk for international customers.</p>
+
+<p>Software solutions of DCH LLC are developed on Linux and partnering with the leading open source provider - Red Hat - was an obvious next step.</p>
+
+<h2>BUSINESS CHALLENGE</h2>
+
+<p>The main business challenges of the company was building a computing infrastructure that will be used for development, testing and demonstration of their software solutions
+and creating partnerships in the Linux field.</p>
+
+<h2>SOLUTION</h2>
+
+<p>Open Technologies Bulgaria was selected to implement the necessary infrastructure and provide advisory services on a partnership with Red Hat.</p>
+
+<p>Implemented infrastructure is a farm of virtual machines. It includes instances for development and testing,
+source code repository server, demonstration server, database and others. All virtual machines are installed with Red Hat Enterprise Linux 6,
+which is the main platform for development of the company products.</p>
+
+<p>DCH LLC sought our consulting services to gain a better understanding of different types of Red Hat affiliate programs and the advantages thereof.
+As a result, the company chose to apply for an independent software vendor partnership.</p>
+
+<h2>BENEFITS</h2>
+
+<p>Implemented infrastructure of virtual machines allows the company to quickly and easily experiment with new versions and technologies
+in order to offer attractive solutions to its customers. Completely virtual environment allows better use of resources and allows dynamics in their distribution,
+thereby reducing the operating costs of the company.</p>
+
+<p>DCH's partnership with Red Hat provides the company access to a stable Linux platform and guaranteed technical support.
+The company can focus its resources on developing its core products rather than to continuously monitor changes in Linux distributions
+and deal with compatibility problems. This avoids the waste of staff and excess labor, which is useful for the company and its customers.</p>
+
+<p>DCH extended its market visibility, because many of the financial institutions use Red Hat Enterprise Linux.
+This way, DCH offers a solution that is ready for use.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Vidiko runs on Red Hat Enterprise Linux]]></title>
+    <link href="http://otb.bg/blog/2010/12/22/vidiko-runs-on-red-hat-enterprise-linux/"/>
+    <updated>2010-12-22T19:01:00+02:00</updated>
+    <id>http://otb.bg/blog/2010/12/22/vidiko-runs-on-red-hat-enterprise-linux</id>
+    <content type="html"><![CDATA[<p><strong>Customer:</strong> Vidiko Ltd.</p>
+
+<p><strong>Industry:</strong> Accounting Services</p>
+
+<p><strong>Geography:</strong> Bulgaria</p>
+
+<p><strong>Business challenge:</strong> Reliable solution for file storage</p>
+
+<p><strong>Solution:</strong> Build internal corporate file server</p>
+
+<p><strong>Software:</strong> Red Hat Enterprise Linux 6 Server</p>
+
+<p><strong>Hardware:</strong> <a href="http://ts.fujitsu.com/products/standard_servers/tower/primergy_tx100s2.html">Fujitsu TX100 S2</a> server,
+emergency power backup <a href = "http://powerwalker.eu/line-interactive.asp">PowerWalker VI 2000 LCD</a></p>
+
+<p><strong>Migration:</strong> no</p>
+
+<p><strong>Advantages:</strong> reliable configuration with minimal maintenance</p>
+
+<h2>BACKGROUND</h2>
+
+<p>Vidiko Ltd. offers accounting services.</p>
+
+<h2>BUSINESS CHALLENGE</h2>
+
+<p>The key business challenge for the company was to provide a reliable file server for internal use.
+Access to files should be possible from Windows desktop stations that used to work with specialized software.</p>
+
+<h2>SOLUTION</h2>
+
+<p>Open Technologies Bulgaria has built a file server using four disk RAID10 array combined with LVM.
+The machine is installed with Red Hat Enterprise Linux 6 Server, and access from Windows stations is through Samba.
+Additional UPS provides power failure protection.</p>
+
+<h2>BENEFITS</h2>
+
+<p>RAID10 configuration protects against disk failure and loss of information while improving productivity.
+Combined with the standard Linux LVM (logical volume manager), the server capacity can be expanded in the future by adding additional hard drives.</p>
+
+<p>UPS provides protection from power blackouts and voltage differences.
+The server is configured to automatically switch on and off in the presence of power or low battery.
+This eliminated the need for constant monitoring by company staff.</p>
 ]]></content>
   </entry>
   
