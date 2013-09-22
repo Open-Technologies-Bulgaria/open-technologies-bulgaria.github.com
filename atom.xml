@@ -4,7 +4,7 @@
   <title><![CDATA[Open Technologies Bulgaria]]></title>
   <link href="http://otb.bg/atom.xml" rel="self"/>
   <link href="http://otb.bg/"/>
-  <updated>2013-09-22T21:34:31+03:00</updated>
+  <updated>2013-09-22T21:56:52+03:00</updated>
   <id>http://otb.bg/</id>
   <author>
     <name><![CDATA[Open Technologies Bulgaria]]></name>
@@ -175,6 +175,15 @@ Automation shortens test turnaround time and allows more flexibility on how and 
 
 <p>Improvement recommendations revealed work-flows which were not functioning smoothly. Implementing them in the long term
 will provide additional benefits to Opencode.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[USB multi-seat on Red Hat Enterprise Linux 6]]></title>
+    <link href="http://otb.bg/blog/2011/03/14/usb-multi-seat-on-red-hat-enterprise-linux-6/"/>
+    <updated>2011-03-14T20:10:00+02:00</updated>
+    <id>http://otb.bg/blog/2011/03/14/usb-multi-seat-on-red-hat-enterprise-linux-6</id>
+    <content type="html"><![CDATA[
 ]]></content>
   </entry>
   
