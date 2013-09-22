@@ -1,0 +1,10 @@
+---
+sidebar: false
+---
+
+{% capture root_url %}{{ site.root | strip_slash }}{% endcapture %}
+{% include head_w_redirect.html %}
+<body>
+<a href="{{ page.redirect }}">{{ page.redirect }}</a>
+</body>
+</html>
